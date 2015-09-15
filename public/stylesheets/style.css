@@ -1,0 +1,23 @@
+/* Admin page*/
+
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+#sideMenu{
+	width: 200px;
+	float: left;
+	min-height: 400px;
+}
+
+#mainContent{
+	width: 800px;
+	background-color: #eee;
+	float: left;
+	min-height: 400px;
+}
+footer{
+	clear:both;
+	height: 100px;
+}
