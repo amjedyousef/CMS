@@ -1,0 +1,4 @@
+Database
+
+name: generalCMS
+password: Now1@old1
