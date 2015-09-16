@@ -30,7 +30,7 @@ if(mysqli_connect_errno() ){
 
 	$results = mysqli_query($conn , $query);
 	// To check for query is success 
-	if($results){
+	if($results && (mysqli_affected_rows($conn) > 0 )){
 			echo "Record has heen updated O_*";
 	}else{
 		die("Database query failed: " . mysqli_error($conn));

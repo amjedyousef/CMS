@@ -15,22 +15,18 @@ if(mysqli_connect_errno() ){
 }
 ?>
 <?php
-	$menu_name = "Menu's voor vandaag! ";
-	$position = (int) 4 ;
-	$visible = (int) 1;
-
-	// Only for strings
-	$menu_name = mysqli_real_escape_string($conn , $menu_name);
+	$id = 5;
 
 	// 2  //  Query 
 	// Query the database
-	$query = "INSERT INTO  subjects";
-	$query .= "(menu_name , position , visible)";
-	$query .= "VALUES ('{$menu_name}' , '{$position}' , '{$visible}')";
+	$query = "DELETE FROM subjects ";
+	$query .= " WHERE id = {$id} ";
+	$query .= " LIMIT 1" ;
+
 	$results = mysqli_query($conn , $query);
 	// To check for query is success 
-	if($results){
-			echo "Record has heen added O_*";
+	if($results && (mysqli_affected_rows($conn) > 0 )){
+			echo "Record has heen deleted O_*";
 	}else{
 		die("Database query failed: " . mysqli_error($conn));
 	}
